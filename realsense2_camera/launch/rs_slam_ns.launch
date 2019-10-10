@@ -38,7 +38,7 @@ Processing enabled by this node:
 -->
 
 <launch>
-  <arg name="namespace"           default="Frodo"/>
+  <arg name="namespace"           default="Gollum"/>
   <arg name="camera"              default="camera"/>
   <arg name="tf_prefix"           default="$(arg namespace)/$(arg camera)"/>
   <arg name="manager"             default="realsense2_camera_manager"/>
