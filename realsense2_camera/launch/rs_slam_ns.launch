@@ -38,7 +38,7 @@ Processing enabled by this node:
 -->
 
 <launch>
-  <arg name="namespace"           default="Gollum"/>
+  <arg name="namespace"           default="Sauron"/>
   <arg name="camera"              default="camera"/>
   <arg name="tf_prefix"           default="$(arg namespace)/$(arg camera)"/>
   <arg name="manager"             default="realsense2_camera_manager"/>
@@ -218,9 +218,13 @@ Processing enabled by this node:
 
     <!-- tf transform between base_link and camera link -->
     <!-- Parameters: x y z qx qy qz qw parent_frame child_frame period(ms) -->
-    <node pkg="tf" type="static_transform_publisher" name="$(arg namespace)_tf_broadcaster" 
-          args="0.11 0 0 0 0 0 1 $(arg namespace)/base_link $(arg namespace)/camera_link 20" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="$(arg namespace)_tf_broadcaster" 
+          args="0.11 0 0 0 0 0 1 $(arg namespace)/base_link $(arg namespace)/camera_link 20" /> -->
 
+    <!-- tf transform between base_link and camera link -->
+    <!-- Parameters: x y z qx qy qz qw parent_frame child_frame period(ms) -->
+    <node pkg="tf" type="static_transform_publisher" name="$(arg namespace)_tf_broadcaster" 
+          args="0 0 0.05 0 0 0 1 $(arg namespace)/t265_pose_frame $(arg namespace)/camera_link 20" />
 
   </group>
 
